@@ -33,7 +33,7 @@
         /* Drohnen-Schwarm Animation */
         .quadcopter {
             position: fixed;
-            opacity: 0.5; /* Deckkraft */
+            opacity: 0.4; /* Deckkraft */
             pointer-events: none; /* Klicks gehen durch das Bild hindurch */
             z-index: 0;
             /* Screen blendet dunkle Hintergründe vom Bild besser aus, ohne es unsichtbar zu machen */
@@ -96,8 +96,47 @@
                     <p class="mb-4">
                         Als Wissenschaftlicher Mitarbeiter und Doktorand am Institut für Mess-, Regelungs- und Mikrotechnik an der Universität Ulm liegt mein Fokus auf der Regelungstechnik im Allgemeinen, wobei dies die Modellbildung, die Systemtheorie sowie die Entwicklung neuer Regler- und Beobachterentwurfsmethoden umfasst.
                     </p>
-                    <p>
-                        Im Zentrum meiner Arbeit steht die Entwicklung neuer Reglerentwurfsmethoden für die Schwarmregelung von boden- sowie luftgebundenen Robotikplattformen. Die Visualisierung dieser entwickelten Regelungsmethoden erfolgte durch den Aufbau der Versuchsplattformen ROMA und DROMA am Institut.
+
+                    <!-- Fachgebiete als Liste mit Icons -->
+                    <ul class="space-y-4 mb-8 bg-dark/50 rounded-lg p-5 border border-border/50">
+                        <li class="flex items-start gap-3">
+                            <!-- Blockschaltbild SVG -->
+                            <svg class="w-6 h-6 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="7" width="8" height="10" stroke-width="2" rx="1"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12h6M16 12h6"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l3 3-3 3M19 9l3 3-3 3"/>
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-white">Modellbildung</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <!-- Text als Mathe-Badge statt Icon -->
+                            <div class="text-primary font-mono font-bold text-xs mt-0.5 shrink-0 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">
+                                Y(s)/U(s)=G(s)
+                            </div>
+                            <div>
+                                <span class="font-semibold text-white">Systemtheorie</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            <div>
+                                <span class="font-semibold text-white">Reglerentwurfsmethoden</span>
+                                <p class="text-sm text-textMuted mt-0.5">Backstepping für PDEs, flachheitsbasierte Regler</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <div>
+                                <span class="font-semibold text-white">Beobachterentwurf</span>
+                                <p class="text-sm text-textMuted mt-0.5">z.B. Kalman-Filter, Luenberger-Beobachter</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                     <p class="mb-8">
+                        Im Zentrum meiner Arbeit steht die Entwicklung neuer Reglerentwurfsmethoden für die Schwarmregelung von boden- sowie luftgebundenen Robotikplattformen. Die Visualisierung dieser entwickelten Regelungsmethoden erfolgte durch den Aufbau der Versuchsplattformen ROMA und DROMA am Institut (siehe <a href="#projects" class="text-primary hover:text-white border-b border-primary/30 hover:border-primary transition-colors font-medium pb-0.5">Projekte</a>).
                     </p>
 
                     <!-- Akademischer Werdegang -->
