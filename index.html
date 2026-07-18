@@ -412,10 +412,10 @@
                 bibFileName: 'cite_pde.bib',
                 bibContent: `@article{deutscher2024backstepping,\n  title={Backstepping Control of Coupled General Hyperbolic-Parabolic PDE-PDE Systems},\n  author={Deutscher, Joachim and Gehring, Nicole and Jung, Nick},\n  journal={IEEE Transactions on Automatic Control},\n  year={2024},\n  publisher={IEEE}\n}`,
                 images: [
-                    'parabolic_states.PNG', // Geändert zum direkten Dateinamen
-                    'https://placehold.co/600x400/161b22/8a965f?text=Graphik+2'
+                    'parabolic_states.PNG', 
+                    'hyperbolic_states.PNG'
                 ],
-                captionKey: 'caption_pde', // Verweis auf die Bildunterschrift
+                captionKey: 'caption_pde', 
                 abstractKey: 'abs_pde'
             },
             'multiagent': {
@@ -517,7 +517,7 @@
                 'abstract_heading': 'Abstract',
                 'caption_pde': 'Simulationsergebnisse für den Zustandsrückführungsentwurf. Die erste Reihe zeigt die Zustände des geschlossenen parabolischen Teilsystems, während die restlichen Reihen die Zustände des geschlossenen hyperbolischen Teilsystems zeigen.',
                 'abs_pde': `Dieser Artikel befasst sich mit dem Entwurf von Backstepping-Zustandsrückführungen und Beobachtern für hyperbolische und parabolische PDEs, die in einer allgemeinen Kopplungsstruktur bidirektional miteinander verbunden sind. Beide PDE-Teilsysteme bestehen aus gekoppelten skalaren PDEs, wobei das heterodirektionale hyperbolische PDE-Teilsystem einer Ansteuerung und Messung unterliegt. Durch die Verwendung eines mehrstufigen Ansatzes zur Konstruktion der Transformation in ein stabiles Zielsystem wird gezeigt, dass die Auslegung einer Backstepping-Zustandsrückführung und eines Beobachters lediglich die Lösung der bekannten Kernelgleichungen für die hyperbolischen und parabolischen Teilsysteme sowie zusätzlicher Entkopplungsgleichungen erfordert. Letztere sind standardmäßige Anfangs-Randwert-Probleme für parabolische PDEs. Dies erleichtert die Wohlgestelltheitsanalyse und die numerische Berechnung des Backstepping-Reglers erheblich. Die exponentielle Stabilität wird für die Zustandsrückführungsschleife, die Fehlerdynamik des Beobachters und das geschlossene System unter Verwendung eines beobachterbasierten Kompensators nachgewiesen. Die vorgeschlagenen Backstepping-Entwurfsprozeduren werden anhand numerischer Beispiele veranschaulicht.`,
-                'abs_multiagent': 'Hier kommt das deutsche Abstract für das Multi-Agenten Paper hin. Es beschäftigt sich mit PDE-basierter Containment-Control.',
+                'abs_multiagent': `Dieser Beitrag befasst sich mit dem Containment-Control Problem für lineare Multi-Agenten-Systeme (MAS) unter Verwendung von Kontinuumsmodellen in Form linearer parabolischer PDEs. Zu diesem Zweck wird ein vernetzter Regler entworfen, der die asymptotische Konvergenz von Folgeagenten in einen durch dynamische Führungsagenten festgelegten Begrenzungsbereich gewährleistet. Dieses Problem lässt sich auf ein Ausgangsregelungsproblem für ein Kontinuumsmodell zurückführen, das unabhängig von der Anzahl der Agenten ist und auch Störungen berücksichtigt. Dem MAS wird im Containment-Bereich mithilfe von Bézier-Kurven eine vorgegebene Formation zugewiesen. Unter Verwendung von bilateralem Backstepping wird ein Folgeregler entworfen, der es ermöglicht, den Regelungsaufwand zwischen den beiden Randagenten zu verteilen. Die Zustände werden durch einen unendlich-dimensionalen Störgrößenbeobachter geschätzt. Hierzu werden sowohl ein Folding-Beobachter mit Netzwerkkommunikation als auch zwei Randbeobachter ohne Netzwerkkommunikation eingeführt. Eine vollständig verteilte Lösung des Containment-Control Problems wird durch den Einsatz eines Kontinuums-Signalmodell-Beobachters erzielt, der die Zustände der Führungsagenten und des Störungsmodells an alle anderen Agenten übermittelt. Die gewünschte Kommunikationstopologie wird nach dem Entwurf durch eine räumliche Diskretisierung vorgegeben. Ein Simulationsbeispiel veranschaulicht die Wirksamkeit der neuen Methode für den Entwurf vernetzter Regler.´,
                 'footer': '© 2026 Nick Math.',
                 'aca_title': 'Akademischer Werdegang',
                 'phd_title': 'Promotion',
