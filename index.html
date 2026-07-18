@@ -379,9 +379,12 @@
                 </div>
 
                 <!-- Grafiken Platzhalter -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10" id="modal-images">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3" id="modal-images">
                     <!-- Wird per JS befüllt -->
                 </div>
+                
+                <!-- Bildunterschrift -->
+                <p id="modal-caption" class="text-sm text-textMuted text-center italic mb-10 px-4"></p>
 
                 <!-- Abstract -->
                 <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
@@ -395,7 +398,7 @@
     </div>
 
     <footer class="text-center py-8 text-textMuted text-sm border-t border-border mt-10">
-        <p data-i18n="footer">&copy; 2024 Nick Math. Erstellt für GitHub Pages.</p>
+        <p data-i18n="footer">&copy; 2026 Nick Math.</p>
     </footer>
 
     <!-- Übersetzungs-Logik (i18n) & Modal Funktionalität -->
@@ -405,24 +408,26 @@
             'pde': {
                 title: 'Backstepping Control of Coupled General Hyperbolic-Parabolic PDE-PDE Systems',
                 authors: 'J. Deutscher, N. Gehring, N. Jung',
-                pdfUrl: 'backstepping_hyp_parab_pde.pdf', // Name der PDF auf GitHub
+                pdfUrl: 'backstepping_hyp_parab_pde.pdf',
                 bibFileName: 'cite_pde.bib',
                 bibContent: `@article{deutscher2024backstepping,\n  title={Backstepping Control of Coupled General Hyperbolic-Parabolic PDE-PDE Systems},\n  author={Deutscher, Joachim and Gehring, Nicole and Jung, Nick},\n  journal={IEEE Transactions on Automatic Control},\n  year={2024},\n  publisher={IEEE}\n}`,
                 images: [
-                    'parabolic_states.PNG',
+                    'parabolic_states.PNG', // Geändert zum direkten Dateinamen
                     'https://placehold.co/600x400/161b22/8a965f?text=Graphik+2'
                 ],
-                abstractKey: 'abs_pde' // Verweis in die i18n Übersetzungstabelle unten
+                captionKey: 'caption_pde', // Verweis auf die Bildunterschrift
+                abstractKey: 'abs_pde'
             },
             'multiagent': {
                 title: 'PDE-based containment control of linear multi-agent systems',
                 authors: 'N. Jung, J. Deutscher',
-                pdfUrl: '2D_containment_integrator.pdf', // Name der PDF auf GitHub
+                pdfUrl: '2D_containment_integrator.pdf',
                 bibFileName: 'cite_multiagent.bib',
                 bibContent: `@article{jung2023pde,\n  title={PDE-based containment control of linear multi-agent systems},\n  author={Jung, Nick and Deutscher, Joachim},\n  journal={International Journal of Robust and Nonlinear Control},\n  volume={33},\n  number={10},\n  pages={5555--5575},\n  year={2023},\n  publisher={Wiley Online Library}\n}`,
                 images: [
                     'https://placehold.co/600x400/161b22/8a965f?text=Graphik+1'
                 ],
+                captionKey: '', // Leer, falls keine existiert
                 abstractKey: 'abs_multiagent'
             }
         };
@@ -449,17 +454,29 @@
                 imgContainer.appendChild(img);
             });
 
+            // Sprache ermitteln
+            const currentLang = localStorage.getItem('lang') || 'de';
+
+            // Bildunterschrift laden
+            const captionEl = document.getElementById('modal-caption');
+            if (paper.captionKey && i18n[currentLang][paper.captionKey]) {
+                captionEl.setAttribute('data-i18n', paper.captionKey);
+                captionEl.textContent = i18n[currentLang][paper.captionKey];
+                captionEl.style.display = 'block';
+            } else {
+                captionEl.style.display = 'none';
+            }
+
             // Abstract zuweisen und sofort übersetzen
             const abstractEl = document.getElementById('modal-abstract');
             abstractEl.setAttribute('data-i18n', paper.abstractKey);
-            const currentLang = localStorage.getItem('lang') || 'de';
             abstractEl.textContent = i18n[currentLang][paper.abstractKey];
 
             // Modal einblenden
             const modal = document.getElementById('paper-modal');
             modal.classList.remove('hidden');
             setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
-            document.body.style.overflow = 'hidden'; // Hintergrund am Scrollen hindern
+            document.body.style.overflow = 'hidden';
         }
 
         function closePaper() {
@@ -476,7 +493,6 @@
             if (!currentOpenPaperId) return;
             const paper = papersDB[currentOpenPaperId];
             
-            // Generiert eine Datei direkt im Browser zum Download
             const blob = new Blob([paper.bibContent], { type: 'text/plain' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -499,10 +515,10 @@
                 'btn_pdf': 'PDF herunterladen',
                 'btn_cite': 'Zitieren (.bib)',
                 'abstract_heading': 'Abstract',
+                'caption_pde': 'Simulationsergebnisse für den Zustandsrückführungsentwurf. Die erste Reihe zeigt die Zustände des geschlossenen parabolischen Teilsystems, während die restlichen Reihen die Zustände des geschlossenen hyperbolischen Teilsystems zeigen.',
                 'abs_pde': `Dieser Artikel befasst sich mit dem Entwurf von Backstepping-Zustandsrückführungen und Beobachtern für hyperbolische und parabolische PDEs, die in einer allgemeinen Kopplungsstruktur bidirektional miteinander verbunden sind. Beide PDE-Teilsysteme bestehen aus gekoppelten skalaren PDEs, wobei das heterodirektionale hyperbolische PDE-Teilsystem einer Ansteuerung und Messung unterliegt. Durch die Verwendung eines mehrstufigen Ansatzes zur Konstruktion der Transformation in ein stabiles Zielsystem wird gezeigt, dass die Auslegung einer Backstepping-Zustandsrückführung und eines Beobachters lediglich die Lösung der bekannten Kernelgleichungen für die hyperbolischen und parabolischen Teilsysteme sowie zusätzlicher Entkopplungsgleichungen erfordert. Letztere sind standardmäßige Anfangs-Randwert-Probleme für parabolische PDEs. Dies erleichtert die Wohlgestelltheitsanalyse und die numerische Berechnung des Backstepping-Reglers erheblich. Die exponentielle Stabilität wird für die Zustandsrückführungsschleife, die Fehlerdynamik des Beobachters und das geschlossene System unter Verwendung eines beobachterbasierten Kompensators nachgewiesen. Die vorgeschlagenen Backstepping-Entwurfsprozeduren werden anhand numerischer Beispiele veranschaulicht.`,
                 'abs_multiagent': 'Hier kommt das deutsche Abstract für das Multi-Agenten Paper hin. Es beschäftigt sich mit PDE-basierter Containment-Control.',
                 'footer': '© 2026 Nick Math.',
-                // Text für die Akademischen Einträge hinzugefügt, falls du sie übersetzen willst
                 'aca_title': 'Akademischer Werdegang',
                 'phd_title': 'Promotion',
                 'phd_desc': 'Regelungstechnik, Universität Ulm',
@@ -549,9 +565,10 @@
                 'btn_pdf': 'Download PDF',
                 'btn_cite': 'Cite (.bib)',
                 'abstract_heading': 'Abstract',
+                'caption_pde': 'Simulation results for the state feedback design. The first row depicts the closed-loop states of the parabolic subsystem, while the remaining rows show the closed-loop states of the hyperbolic subsystem.',
                 'abs_pde': `This article considers the backstepping state feedback and observer design for hyperbolic and parabolic PDEs, which are bidirectionally interconnected in a general coupling structure. Both PDE subsystems consist of coupled scalar PDEs with the heterodirectional hyperbolic PDE subsystem subject to actuation and sensing. By making use of a multistep approach to construct the transformation into a stable target system, it is shown that a backstepping state feedback and observer design only requires to solve the well-known kernel equations for the hyperbolic and parabolic subsystems as well as additional decoupling equations. The latter are standard initial boundary value problems for parabolic PDEs. This significantly facilitates the well-posedness analysis and the numerical computation of the backstepping controller. Exponential stability is verified for the state feedback loop, the observer error dynamics, and the closed-loop system using an observer-based compensator. The proposed backstepping design procedures are demonstrated for numerical examples.`,
-                'abs_multiagent': 'Insert the English abstract for the multi-agent paper here. It focuses on PDE-based containment control.',
-                'footer': '© 2024 Nick Math. Created for GitHub Pages.',
+                'abs_multiagent': `This contribution considers the containment control problem for linear multi-agent systems (MAS) using continuum models in form of linear parabolic PDEs. For this, a networked controller is designed, that ensures the asymptotic convergence of finite-dimensional agents into a containment area specified by dynamic leaders. This problem is traced back to an output regulation problem for a continuum model independent of the number of agents, which also takes disturbances into account. A prescribed formation is assigned for the MAS in the containment area by using Bézier curves. Using bilateral backstepping a tracking controller is designed, which allows to distribute the control effort between the two boundary agents. The states are estimated by an infinite-dimensional disturbance observer. For this, both a folding observer with network communication and two boundary observers without network communication are introduced. A fully distributed solution of the containment control problem is obtained by employing a continuum signal model observer, which communicates the states of the leader and disturbance model to all agents. The desired communication topology is imposed after the design by a spatial discretization. A simulation example illustrates the effectiveness of the new method for the networked controller design.`,
+                'footer': '© 2026 Nick Math.',
                 'aca_title': 'Academic Background',
                 'phd_title': 'Ph.D. Candidate',
                 'phd_desc': 'Control Engineering, Ulm University',
