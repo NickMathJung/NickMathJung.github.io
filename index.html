@@ -27,32 +27,7 @@
     <style>
         body {
             background-color: #0d1117; /* GitHub Dark Mode Background */
-            overflow-x: hidden; /* Verhindert horizontales Scrollen durch Drohnen */
         }
-        
-        /* Drohnen-Schwarm Animation */
-        .quadcopter {
-            position: fixed;
-            opacity: 0.4; /* Deckkraft */
-            pointer-events: none; /* Klicks gehen durch das Bild hindurch */
-            z-index: 0;
-            /* Screen blendet dunkle Hintergründe vom Bild besser aus, ohne es unsichtbar zu machen */
-            mix-blend-mode: screen; 
-            animation: fly 20s infinite linear;
-        }
-        
-        @keyframes fly {
-            0% { transform: translate(-150px, 100vh) rotate(-15deg) scale(0.9); }
-            50% { transform: translate(50vw, 40vh) rotate(5deg) scale(1.1); }
-            100% { transform: translate(100vw, -150px) rotate(25deg) scale(0.9); }
-        }
-
-        /* Individuelle Startpunkte und Geschwindigkeiten für den Schwarm */
-        #drone1 { left: 5%; animation-duration: 24s; animation-delay: 0s; width: 120px; }
-        #drone2 { left: 35%; animation-duration: 19s; animation-delay: -7s; width: 85px; }
-        #drone3 { left: 75%; animation-duration: 28s; animation-delay: -14s; width: 105px; }
-        #drone4 { left: -10%; animation-duration: 32s; animation-delay: -2s; width: 65px; }
-        #drone5 { left: 55%; animation-duration: 22s; animation-delay: -11s; width: 90px; }
     </style>
 </head>
 <body class="text-textMain font-sans antialiased relative selection:bg-primary selection:text-dark">
