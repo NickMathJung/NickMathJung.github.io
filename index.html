@@ -107,42 +107,57 @@
                     <!-- Fachgebiete als Liste mit Icons -->
                     <ul class="space-y-5 mb-8 bg-dark/50 rounded-lg p-5 border border-border/50">
                         
-                        <!-- 1. Modellbildung -->
+                        <!-- 1. Modellbildung: Blockschaltbild mit Rückführung (angepasst) -->
                         <li class="flex items-start gap-4">
                             <svg class="w-12 h-12 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 40 40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="15" y="6" width="6" height="8" rx="1" />
-                                <rect x="26" y="6" width="6" height="8" rx="1" />
-                                <rect x="19" y="24" width="6" height="8" rx="1" />
+                                <!-- Blöcke (Halbe Höhe) -->
+                                <rect x="15" y="8" width="6" height="4" rx="1" />
+                                <rect x="26" y="8" width="6" height="4" rx="1" />
+                                <rect x="19" y="26" width="6" height="4" rx="1" />
+                                
+                                <!-- Summierstelle -->
                                 <circle cx="9" cy="10" r="2" />
+                                
+                                <!-- Führungssignal -->
                                 <path d="M 0 10 h 6.5" />
-                                <path d="M 3.5 6.5 L 7.5 10 L 3.5 13.5" />
+                                <path d="M 5 8.5 L 7.5 10 L 5 11.5" />
+                                
+                                <!-- Summe zu Block 1 -->
                                 <path d="M 11 10 h 2.5" />
-                                <path d="M 10.5 7 L 13.5 10 L 10.5 13" />
+                                <path d="M 11.5 8.5 L 14 10 L 11.5 11.5" />
+                                
+                                <!-- Block 1 zu Block 2 -->
                                 <path d="M 21 10 h 3.5" />
-                                <path d="M 21.5 7 L 24.5 10 L 21.5 13" />
+                                <path d="M 22 8.5 L 24.5 10 L 22 11.5" />
+                                
+                                <!-- Ausgangssignal -->
                                 <path d="M 32 10 h 6.5" />
-                                <path d="M 35.5 6.5 L 39.5 10 L 35.5 13.5" />
+                                <path d="M 37 8.5 L 39.5 10 L 37 11.5" />
+                                
+                                <!-- Rückführung -->
                                 <circle cx="34" cy="10" r="1.5" fill="currentColor" stroke="none" />
                                 <path d="M 34 10 v 18 h -8.5" />
-                                <path d="M 28.5 25 L 25 28 L 28.5 31" />
+                                <path d="M 27 26.5 L 24.5 28 L 27 29.5" />
+                                
+                                <!-- Block 3 zu Summierstelle -->
                                 <path d="M 19 28 h -10 v -16" />
-                                <path d="M 6 15 L 9 12 L 12 15" />
+                                <path d="M 7.5 14 L 9 11.5 L 10.5 14" />
                             </svg>
                             <div class="mt-1">
-                                <span class="font-semibold text-white" data-i18n="model_title">Modellbildung</span>
+                                <span class="font-semibold text-white">Modellbildung</span>
                             </div>
                         </li>
                         
-                        <!-- 2. Systemtheorie -->
+                        <!-- 2. Systemtheorie: Bruch Y(s)/U(s) als kompaktes SVG -->
                         <li class="flex items-start gap-4">
-                            <svg class="w-12 h-12 text-primary shrink-0" viewBox="0 0 90 50" fill="none" stroke="currentColor">
-                                <text x="22" y="20" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">Y(s)</text>
-                                <line x1="2" y1="26" x2="42" y2="26" stroke-width="2.5" stroke-linecap="round" />
-                                <text x="22" y="46" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">U(s)</text>
-                                <text x="52" y="33" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none">= G(s)</text>
+                            <svg class="w-12 h-12 text-primary shrink-0" viewBox="0 0 110 60" fill="none" stroke="currentColor">
+                                <text x="24" y="24" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">Y(s)</text>
+                                <line x1="4" y1="31" x2="44" y2="31" stroke-width="2.5" stroke-linecap="round" />
+                                <text x="24" y="52" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none" text-anchor="middle">U(s)</text>
+                                <text x="50" y="38" font-family="monospace" font-size="22" font-weight="bold" fill="currentColor" stroke="none" text-anchor="start">= G(s)</text>
                             </svg>
                             <div class="mt-2">
-                                <span class="font-semibold text-white" data-i18n="sys_title">Systemtheorie</span>
+                                <span class="font-semibold text-white">Systemtheorie</span>
                             </div>
                         </li>
                         
