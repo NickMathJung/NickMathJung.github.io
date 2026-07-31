@@ -3,34 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Math | Control Engineering & Robotics</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0d1117',
-                        card: '#161b22',
-                        border: '#30363d',
-                        primary: '#8a965f', /* RGB 138, 150, 95 */
-                        textMain: '#c9d1d9',
-                        textMuted: '#8b949e'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #0d1117; /* GitHub Dark Mode Background */
-        }
-    </style>
+    <title>Nick Math | Control Engineering &amp; Robotics</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Nick Math — Research Associate & PhD candidate in Control Engineering at Ulm University. Backstepping control for PDEs, observer design, and swarm/formation control of robotic platforms (ROMA & DROMA).">
+    <meta name="author" content="Nick Math">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="canonical" href="https://nickmathjung.github.io/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nick Math">
+    <meta property="og:title" content="Nick Math | Control Engineering &amp; Robotics">
+    <meta property="og:description" content="Research Associate & PhD candidate in Control Engineering at Ulm University. Backstepping control for PDEs, observer design, and swarm/formation control.">
+    <meta property="og:url" content="https://nickmathjung.github.io/">
+    <meta property="og:image" content="https://nickmathjung.github.io/profile.jpg">
+    <meta property="og:image:alt" content="Nick Math">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nick Math | Control Engineering &amp; Robotics">
+    <meta name="twitter:description" content="Research Associate & PhD candidate in Control Engineering at Ulm University. Backstepping control for PDEs, observer design, swarm & formation control.">
+    <meta name="twitter:image" content="https://nickmathjung.github.io/profile.jpg">
+
+    <!-- Favicon: inline SVG monogram (no extra file needed) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1117'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='%238a965f'%3ENM%3C/text%3E%3C/svg%3E">
+
+    <!-- Precompiled Tailwind utilities (replaces the cdn.tailwindcss.com Play CDN) -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="text-textMain font-sans antialiased relative selection:bg-primary selection:text-dark">
+
+    <!-- SVG icon sprite: defined once, referenced elsewhere via <use> to avoid duplication -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="icon-github" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+        </symbol>
+    </svg>
 
     <!-- News Banner -->
     <div class="bg-primary text-dark text-center py-2 px-4 text-sm font-bold relative z-10 shadow-md">
@@ -232,7 +243,7 @@
                     <div class="flex justify-between items-start mb-3 gap-2">
                         <h3 class="text-xl font-bold text-white" data-i18n="proj1_title">Versuchsstand autonomer Drohnenschwarm - DROMA</h3>
                         <a href="https://github.com/NickMathJung/DROMA" target="_blank" rel="noopener noreferrer" class="text-textMuted hover:text-primary transition-colors shrink-0" title="Zum GitHub Repository">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
                         </a>
                     </div>
                     <p class="text-sm text-textMuted mb-4" data-i18n="proj1_desc">
@@ -252,11 +263,13 @@
                         Entwurf und Simulation von netzwerkbasierten Formationsregelungen in 3D zur Lösung des Containment Control Problems. Der entworfene Regler soll in Zukunft auf dem entwickelten Teststand DROMA implementiert und getestet werden.
                     </p>
                     
-                    <!-- Hier ist das eingefügte GIF -->
+                    <!-- Formations-Video (MP4 statt GIF: ~1,7 MB statt 311 MB Quelle; GIF bleibt als Fallback) -->
                     <div class="mb-4 mt-2 overflow-hidden rounded-lg border border-border shadow-sm">
-                        <!-- Ersetze "formation_video.gif" durch den tatsächlichen Dateinamen deines GIFs -->
-                        <!-- Der placehold.co Link dient als Platzhalter, falls das GIF nicht lädt -->
-                        <img src="formation_video.gif" onerror="this.src='https://placehold.co/600x300/1f2937/8a965f?text=3D+Formation+GIF'" alt="3D Formationsregelung Animation" class="w-full h-auto object-cover">
+                        <video autoplay loop muted playsinline preload="metadata" aria-label="3D Formationsregelung Animation" class="w-full h-auto object-cover block">
+                            <source src="formation_video.mp4" type="video/mp4">
+                            <!-- Fallback für Browser ohne Video-Unterstützung -->
+                            <img src="formation_video.gif" alt="3D Formationsregelung Animation" class="w-full h-auto object-cover" loading="lazy" decoding="async">
+                        </video>
                     </div>
 
                     <div class="flex flex-wrap gap-2 mt-auto">
@@ -317,7 +330,7 @@
                         <span data-i18n="contact_btn1">E-Mail senden</span>
                     </a>
                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg transition-colors shadow-md flex items-center gap-2">
-                        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        <svg class="w-5 h-5 shrink-0" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>
                         <span data-i18n="contact_btn2">GitHub Profil</span>
                     </a>
                 </div>
@@ -327,11 +340,11 @@
     </main>
 
     <!-- Publication Modal (Overlay Detailansicht) -->
-    <div id="paper-modal" class="fixed inset-0 z-[100] bg-dark/95 backdrop-blur-md overflow-y-auto hidden opacity-0 transition-opacity duration-300">
+    <div id="paper-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] bg-dark/95 backdrop-blur-md overflow-y-auto hidden opacity-0 transition-opacity duration-300">
         <div class="min-h-screen px-4 text-center">
             <!-- Zentrierungshilfe -->
             <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-            <div class="inline-block w-full max-w-4xl p-6 md:p-10 my-8 text-left align-middle transition-all transform bg-card border border-border rounded-2xl shadow-2xl relative">
+            <div id="paper-card" class="inline-block w-full max-w-4xl p-6 md:p-10 my-8 text-left align-middle transition-all transform bg-card border border-border rounded-2xl shadow-2xl relative">
                 
                 <!-- Close Button -->
                 <button onclick="closePaper()" class="absolute top-4 right-4 text-textMuted hover:text-white bg-dark/50 hover:bg-dark p-2 rounded-full transition-all z-50">
@@ -379,8 +392,8 @@
     </div>
 
     <!-- Lightbox (Bildvergrößerung) -->
-    <div id="lightbox" class="fixed inset-0 z-[200] bg-black/90 hidden items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl">
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Bildansicht" tabindex="-1" class="fixed inset-0 z-[200] bg-black/90 hidden items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl">
     </div>
 
     <footer class="text-center py-8 text-textMuted text-sm border-t border-border mt-10">
@@ -423,22 +436,34 @@
 
         let currentOpenPaperId = null;
 
+        // --- Fokus-Management für Modal & Lightbox (Barrierefreiheit) ---
+        let lastFocusedEl = null;    // Fokus vor dem Öffnen des Publikations-Modals
+        let lastFocusedElLB = null;  // Fokus vor dem Öffnen der Lightbox
+        function getFocusable(container) {
+            return Array.from(container.querySelectorAll(
+                'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            )).filter(el => el.offsetParent !== null);
+        }
+
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
+            lastFocusedElLB = document.activeElement;
             lightboxImg.src = src;
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
+            lightbox.focus();
             setTimeout(() => { lightbox.classList.remove('opacity-0'); }, 10);
         }
 
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.add('opacity-0');
-            setTimeout(() => { 
-                lightbox.classList.add('hidden'); 
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
                 lightbox.classList.remove('flex');
             }, 300);
+            if (lastFocusedElLB && typeof lastFocusedElLB.focus === 'function') lastFocusedElLB.focus();
         }
 
         function openPaper(id) {
@@ -458,6 +483,9 @@
                 if (item.type === 'image') {
                     const img = document.createElement('img');
                     img.src = item.src;
+                    img.alt = paper.title;
+                    img.loading = 'lazy';
+                    img.decoding = 'async';
                     img.className = 'rounded-xl border border-border w-full object-cover shadow-sm cursor-zoom-in hover:opacity-90 transition-opacity';
                     img.onclick = () => openLightbox(item.src);
                     mediaContainer.appendChild(img);
@@ -468,12 +496,16 @@
                     vid.loop = true;
                     vid.muted = true;
                     vid.playsInline = true;
+                    vid.preload = 'metadata';
+                    vid.setAttribute('aria-label', paper.title);
                     vid.className = 'rounded-xl border border-border w-full object-cover shadow-sm';
                     // Falls das mp4 nicht lädt, versuche das gif
                     if(item.fallback) {
                         vid.onerror = () => {
                             const fallbackImg = document.createElement('img');
                             fallbackImg.src = item.fallback;
+                            fallbackImg.alt = paper.title;
+                            fallbackImg.loading = 'lazy';
                             fallbackImg.className = 'rounded-xl border border-border w-full object-cover shadow-sm cursor-zoom-in';
                             fallbackImg.onclick = () => openLightbox(item.fallback);
                             mediaContainer.replaceChild(fallbackImg, vid);
@@ -514,11 +546,17 @@
             abstractEl.setAttribute('data-i18n', paper.abstractKey);
             abstractEl.textContent = i18n[currentLang][paper.abstractKey];
 
-            // Modal einblenden
+            // Modal einblenden (Fokus nur beim erstmaligen Öffnen setzen, nicht beim Sprachwechsel)
             const modal = document.getElementById('paper-modal');
+            const isReopen = !modal.classList.contains('hidden');
+            if (!isReopen) lastFocusedEl = document.activeElement;
             modal.classList.remove('hidden');
             setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
             document.body.style.overflow = 'hidden';
+            if (!isReopen) {
+                const focusables = getFocusable(modal);
+                if (focusables.length) focusables[0].focus();
+            }
         }
 
         function closePaper() {
@@ -531,6 +569,7 @@
                 // Videos stoppen, falls sie im Hintergrund weiterlaufen
                 document.getElementById('modal-images').innerHTML = '';
             }, 300);
+            if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') lastFocusedEl.focus();
         }
 
         function downloadBib() {
@@ -679,6 +718,8 @@
         };
 
         function setLanguage(lang) {
+            // Halte das lang-Attribut synchron (wichtig für Screenreader & SEO)
+            document.documentElement.lang = lang;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang][key]) {
@@ -711,6 +752,37 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('lang') || 'de';
             setLanguage(savedLang);
+        });
+
+        // Tastatursteuerung: ESC schließt (Lightbox zuerst); Tab bleibt im offenen Dialog gefangen
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            const modal = document.getElementById('paper-modal');
+            const lbOpen = lightbox && !lightbox.classList.contains('hidden');
+            const modalOpen = modal && !modal.classList.contains('hidden');
+
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                if (lbOpen) closeLightbox();
+                else if (modalOpen) closePaper();
+                return;
+            }
+
+            if (e.key === 'Tab') {
+                const active = lbOpen ? lightbox : (modalOpen ? modal : null);
+                if (!active) return;
+                const f = getFocusable(active);
+                if (f.length === 0) { e.preventDefault(); return; }
+                const first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+                else if (!active.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        // Klick außerhalb der Modal-Karte schließt das Publikations-Modal
+        document.getElementById('paper-modal').addEventListener('click', (e) => {
+            const card = document.getElementById('paper-card');
+            if (card && !card.contains(e.target)) closePaper();
         });
     </script>
 

@@ -1,0 +1,318 @@
+/* =====================================================================
+   styles.css — precompiled stylesheet for Nick Math's site
+   Replaces the Tailwind Play CDN (cdn.tailwindcss.com) with a static,
+   self-contained file. Contains only the utilities used by index.html
+   plus a minimal reset (Tailwind "preflight" equivalent).
+
+   If you ever add NEW Tailwind classes to index.html, add the matching
+   rule here (or re-generate with the Tailwind CLI). Nothing else needs
+   a build step — just edit and push.
+
+   Theme colors:
+     dark #0d1117 · card #161b22 · border #30363d
+     primary #8a965f (rgb 138,150,95) · textMain #c9d1d9 · textMuted #8b949e
+   ===================================================================== */
+
+/* ---------- Fonts: self-hosted Inter (variable, weights 100-900 in one file) ---------- */
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-display:swap;
+  font-weight:100 900;
+  src:url('fonts/inter-latin-wght-normal.woff2') format('woff2');
+}
+
+/* ---------- Reset / preflight ---------- */
+*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#30363d}
+html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}
+body{margin:0;line-height:inherit;background-color:#0d1117}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}
+p,figure{margin:0}
+a{color:inherit;text-decoration:inherit}
+ul,ol{list-style:none;margin:0;padding:0}
+button{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0;background-color:transparent;background-image:none;cursor:pointer}
+[role=button]{cursor:pointer}
+img,svg,video{display:block;vertical-align:middle}
+img,video{max-width:100%;height:auto}
+text,line,path,rect,circle{stroke:inherit}
+
+/* ---------- Display ---------- */
+.block{display:block}
+.inline-block{display:inline-block}
+.flex{display:flex}
+.grid{display:grid}
+.hidden{display:none}
+
+/* ---------- Position ---------- */
+.relative{position:relative}
+.absolute{position:absolute}
+.fixed{position:fixed}
+.sticky{position:sticky}
+.inset-0{top:0;right:0;bottom:0;left:0}
+.top-0{top:0}
+.top-2{top:.5rem}
+.top-4{top:1rem}
+.right-4{right:1rem}
+.-left-\[5px\]{left:-5px}
+.left-\[-5px\]{left:-5px}
+
+/* ---------- Z-index ---------- */
+.z-10{z-index:10}
+.z-50{z-index:50}
+.z-\[100\]{z-index:100}
+.z-\[200\]{z-index:200}
+
+/* ---------- Sizing ---------- */
+.w-2{width:.5rem}
+.w-5{width:1.25rem}
+.w-6{width:1.5rem}
+.w-12{width:3rem}
+.w-32{width:8rem}
+.w-full{width:100%}
+.h-2{height:.5rem}
+.h-5{height:1.25rem}
+.h-6{height:1.5rem}
+.h-12{height:3rem}
+.h-32{height:8rem}
+.h-auto{height:auto}
+.h-screen{height:100vh}
+.min-h-screen{min-height:100vh}
+.max-w-4xl{max-width:56rem}
+.max-w-5xl{max-width:64rem}
+.max-w-full{max-width:100%}
+.max-h-\[90vh\]{max-height:90vh}
+
+/* ---------- Margin ---------- */
+.mx-auto{margin-left:auto;margin-right:auto}
+.my-8{margin-top:2rem;margin-bottom:2rem}
+.mt-auto{margin-top:auto}
+.mt-0\.5{margin-top:.125rem}
+.mt-1{margin-top:.25rem}
+.mt-2{margin-top:.5rem}
+.mt-4{margin-top:1rem}
+.mt-10{margin-top:2.5rem}
+.mb-1{margin-bottom:.25rem}
+.mb-2{margin-bottom:.5rem}
+.mb-3{margin-bottom:.75rem}
+.mb-4{margin-bottom:1rem}
+.mb-6{margin-bottom:1.5rem}
+.mb-8{margin-bottom:2rem}
+.mb-10{margin-bottom:2.5rem}
+.mb-20{margin-bottom:5rem}
+.ml-2{margin-left:.5rem}
+.-ml-2{margin-left:-.5rem}
+
+/* ---------- Padding ---------- */
+.p-2{padding:.5rem}
+.p-4{padding:1rem}
+.p-5{padding:1.25rem}
+.p-6{padding:1.5rem}
+.p-8{padding:2rem}
+.px-2{padding-left:.5rem;padding-right:.5rem}
+.px-2\.5{padding-left:.625rem;padding-right:.625rem}
+.px-3{padding-left:.75rem;padding-right:.75rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}
+.py-2{padding-top:.5rem;padding-bottom:.5rem}
+.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.py-8{padding-top:2rem;padding-bottom:2rem}
+.py-12{padding-top:3rem;padding-bottom:3rem}
+.pt-4{padding-top:1rem}
+.pt-6{padding-top:1.5rem}
+.pt-8{padding-top:2rem}
+.pb-0\.5{padding-bottom:.125rem}
+.pb-2{padding-bottom:.5rem}
+.pb-8{padding-bottom:2rem}
+.pl-4{padding-left:1rem}
+.pr-8{padding-right:2rem}
+
+/* ---------- Flexbox & grid ---------- */
+.flex-col{flex-direction:column}
+.flex-wrap{flex-wrap:wrap}
+.items-start{align-items:flex-start}
+.items-center{align-items:center}
+.justify-center{justify-content:center}
+.justify-between{justify-content:space-between}
+.gap-2{gap:.5rem}
+.gap-4{gap:1rem}
+.gap-6{gap:1.5rem}
+.gap-8{gap:2rem}
+.shrink-0{flex-shrink:0}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}
+.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}
+.space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}
+
+/* ---------- Borders ---------- */
+.border{border-width:1px}
+.border-4{border-width:4px}
+.border-t{border-top-width:1px}
+.border-b{border-bottom-width:1px}
+.border-l{border-left-width:1px}
+.border-l-2{border-left-width:2px}
+.border-border{border-color:#30363d}
+.border-border\/50{border-color:rgba(48,54,61,.5)}
+.border-primary\/20{border-color:rgba(138,150,95,.2)}
+.border-primary\/30{border-color:rgba(138,150,95,.3)}
+.border-primary\/40{border-color:rgba(138,150,95,.4)}
+
+/* ---------- Border radius ---------- */
+.rounded{border-radius:.25rem}
+.rounded-lg{border-radius:.5rem}
+.rounded-xl{border-radius:.75rem}
+.rounded-2xl{border-radius:1rem}
+.rounded-full{border-radius:9999px}
+
+/* ---------- Background colors ---------- */
+.bg-dark{background-color:#0d1117}
+.bg-card{background-color:#161b22}
+.bg-primary{background-color:#8a965f}
+.bg-gray-700{background-color:#374151}
+.bg-\[\#21262d\]{background-color:#21262d}
+.bg-card\/90{background-color:rgba(22,27,34,.9)}
+.bg-dark\/30{background-color:rgba(13,17,23,.3)}
+.bg-dark\/50{background-color:rgba(13,17,23,.5)}
+.bg-dark\/95{background-color:rgba(13,17,23,.95)}
+.bg-black\/90{background-color:rgba(0,0,0,.9)}
+.bg-primary\/10{background-color:rgba(138,150,95,.1)}
+.bg-primary\/20{background-color:rgba(138,150,95,.2)}
+
+/* ---------- Gradient ---------- */
+.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}
+.from-card{--tw-gradient-to:rgba(22,27,34,0);--tw-gradient-from:#161b22;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
+.to-\[\#1f2937\]{--tw-gradient-to:#1f2937}
+
+/* ---------- Text colors ---------- */
+.text-primary{color:#8a965f}
+.text-textMain{color:#c9d1d9}
+.text-textMuted{color:#8b949e}
+.text-white{color:#fff}
+.text-dark{color:#0d1117}
+.text-border{color:#30363d}
+
+/* ---------- Font size ---------- */
+.text-xs{font-size:.75rem;line-height:1rem}
+.text-sm{font-size:.875rem;line-height:1.25rem}
+.text-lg{font-size:1.125rem;line-height:1.75rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.text-3xl{font-size:1.875rem;line-height:2.25rem}
+
+/* ---------- Font weight ---------- */
+.font-medium{font-weight:500}
+.font-semibold{font-weight:600}
+.font-bold{font-weight:700}
+
+/* ---------- Font family ---------- */
+.font-sans{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}
+
+/* ---------- Line height & letter spacing ---------- */
+.leading-tight{line-height:1.25}
+.leading-relaxed{line-height:1.625}
+.tracking-tight{letter-spacing:-.025em}
+.tracking-wider{letter-spacing:.05em}
+
+/* ---------- Text alignment & style ---------- */
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-justify{text-align:justify}
+.italic{font-style:italic}
+.align-middle{vertical-align:middle}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* ---------- Object fit ---------- */
+.object-cover{object-fit:cover}
+.object-contain{object-fit:contain}
+
+/* ---------- Overflow ---------- */
+.overflow-hidden{overflow:hidden}
+.overflow-y-auto{overflow-y:auto}
+
+/* ---------- Opacity ---------- */
+.opacity-0{opacity:0}
+
+/* ---------- Shadow ---------- */
+.shadow-sm{box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}
+.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)}
+.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}
+.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+
+/* ---------- Cursor ---------- */
+.cursor-pointer{cursor:pointer}
+.cursor-zoom-in{cursor:zoom-in}
+.cursor-zoom-out{cursor:zoom-out}
+
+/* ---------- Transform ---------- */
+.transform{transform:translate(0,0)}
+
+/* ---------- Transitions ---------- */
+.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}
+.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}
+.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}
+.duration-300{transition-duration:300ms}
+
+/* ---------- Backdrop blur ---------- */
+.backdrop-blur-sm{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.backdrop-blur-md{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+
+/* ---------- Line clamp ---------- */
+.line-clamp-4{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4}
+
+/* ---------- Scroll behavior ---------- */
+.scroll-smooth{scroll-behavior:smooth}
+
+/* ---------- Selection ---------- */
+.selection\:bg-primary::selection,.selection\:bg-primary *::selection{background-color:#8a965f}
+.selection\:text-dark::selection,.selection\:text-dark *::selection{color:#0d1117}
+
+/* ---------- Hover states ---------- */
+.hover\:-translate-y-1:hover{transform:translateY(-.25rem)}
+.hover\:bg-gray-600:hover{background-color:#4b5563}
+.hover\:bg-dark:hover{background-color:#0d1117}
+.hover\:bg-primary\/20:hover{background-color:rgba(138,150,95,.2)}
+.hover\:bg-primary\/80:hover{background-color:rgba(138,150,95,.8)}
+.hover\:bg-white\/5:hover{background-color:rgba(255,255,255,.05)}
+.hover\:border-primary:hover{border-color:#8a965f}
+.hover\:border-textMuted:hover{border-color:#8b949e}
+.hover\:text-primary:hover{color:#8a965f}
+.hover\:text-primary\/80:hover{color:rgba(138,150,95,.8)}
+.hover\:text-white:hover{color:#fff}
+.hover\:opacity-80:hover{opacity:.8}
+.hover\:opacity-90:hover{opacity:.9}
+
+/* ---------- Group hover ---------- */
+.group:hover .group-hover\:opacity-100{opacity:1}
+.group:hover .group-hover\:text-primary{color:#8a965f}
+
+/* ---------- Responsive: sm (>=640px) ---------- */
+@media (min-width:640px){
+  .sm\:flex-row{flex-direction:row}
+  .sm\:justify-between{justify-content:space-between}
+  .sm\:items-baseline{align-items:baseline}
+  .sm\:mt-0{margin-top:0}
+}
+
+/* ---------- Responsive: md (>=768px) ---------- */
+@media (min-width:768px){
+  .md\:flex-row{flex-direction:row}
+  .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .md\:gap-6{gap:1.5rem}
+  .md\:items-center{align-items:center}
+  .md\:items-start{align-items:flex-start}
+  .md\:p-10{padding:2.5rem}
+  .md\:pl-6{padding-left:1.5rem}
+  .md\:text-base{font-size:1rem;line-height:1.5rem}
+  .md\:text-lg{font-size:1.125rem;line-height:1.75rem}
+  .md\:text-3xl{font-size:1.875rem;line-height:2.25rem}
+  .md\:w-40{width:10rem}
+  .md\:h-40{height:10rem}
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,::before,::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
